@@ -1,0 +1,10 @@
+﻿
+#FechaEmision#6/12/2015 9:33:32 AM
+#Empleado#SERVICIO DE MANTENIMIENTO
+#UnidadCodigo#P-185
+#DescUnidad#Pendiente
+#FechaInicio#12/6/2015 8:45:0
+#FechaFin#15/6/2015 8:45:0
+#Destino#Distribuidora de Automoviles, S.A. (DIDEA) - 28 Av. 5-20 Zona 11 Interior Parque automotriz las Majadas Local 4
+#Obser#
+#CodigoBarra#03524233113
