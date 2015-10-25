@@ -9,7 +9,7 @@
   <meta name="author" content="">
   <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 
-  <title>Dashboard | Monitoreo</title>
+  <title>Dashboard | Facturacion</title>
 
   <link href="css/style.default.css" rel="stylesheet">
   <link href="css/jquery.datatables.css" rel="stylesheet">
@@ -35,7 +35,7 @@
     <asp:Button ID="MostrarAlerta" style="display:none;" runat="server" Text="Button"></asp:Button>
   </form>
     <div class="logopanel">
-        <h1><span>[</span> Monitoreo <span>]</span></h1>
+        <h1><span>[</span> Facturacion <span>]</span></h1>
     </div><!-- logopanel -->
         
     <div class="leftpanelinner">    
