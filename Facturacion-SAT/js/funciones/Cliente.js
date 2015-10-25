@@ -7,16 +7,16 @@
         $("#textMDId").val("");
         $('select').val(0).trigger("chosen:updated");
         $('.ModalEditarVehiculo').modal('toggle');
-        $("#BtnGuardarV").show();
-        $("#BtnEditarV").hide();
+        $("#BtnGuardarC").show();
+        $("#BtnEditarC").hide();
         $("#LblModificar").hide();
         $("#LblCrear").show();
     });
     $(".TablaClientes tbody").on("click", ".BtnEditarCliente", function () {
         //            IndexTr = $(this).parent().parent().index();
         //            $(".TableVehiculos").dataTable().fnDeleteRow(IndexTr);
-        $("#BtnEditarV").show();
-        $("#BtnGuardarV").hide();
+        $("#BtnEditarC").show();
+        $("#BtnGuardarC").hide();
         $("#LblModificar").show();
         $("#LblCrear").hide();
         var id = this.id;
@@ -58,6 +58,7 @@
     });
 });
 function MostrarClientes(id) {
+    $(".TablaClientes").dataTable().fnClearTable();
     $.ajax({
         type: "POST",
         url: "wsCliente.asmx/CatalogoClientes",
@@ -86,28 +87,18 @@ function MostrarClientes(id) {
 }
 
 $(document).ready(function () {
-    $("#BtnEditarV").click(function () {
-        var tipo = $("#DropTipoVehiculo").val();
-        var departamento = $("#DropDepartamento").val();
-        var usuario = $("#DropUsuario").val();
-        var status = false;
-        if ($("#DropEstatus").val() == 1) {
-            status = true;
-        }
-        var pool = false;
-        if ($("#CheckPool div:eq(0)").hasClass("active")) {
-            pool = true;
-        }
+    $("#BtnEditarC").click(function () {
+  
         $.ajax({
             type: "POST",
-            url: "WebService.asmx/ActualizarVehiculo",
-            data: "{'Id':" + $("#textMDId").val() + ",'codigo':'" + $("#textMDCodigo").val() + "', 'placa':'" + $("#textMDPlaca").val() + "', 'kma':'" + $("#txtMDKilometraje").val() + "', 'marca':'" + $("#txtMDMarca").val() + "', 'linea':'" + $("#txtMDLinea").val() + "', 'modelo':'" + $("#txtMDModelo").val() + "', 'tipo':'" + tipo + "', 'departamento':'" + departamento + "', 'contable':'" + $("#txtMDContable").val() + "', 'status':" + status + ", 'cllantas':" + $("#txtMDCllantas").val() + ", 'repuesto':" + $("#txtMDCllantasR").val() + ", 'pool':" + pool + ", 'Usuario':'" + usuario + "', 'CorreoEncargado':'" + $("#TxtCOEncargado").val() + "'}",
+            url: "wsCliente.asmx/EditarCliente",
+            data: "{'Id':" + $("#textMDId").val() + ",'Nombre':'" + $("#textMDNombre").val() + "', 'Nit':'" + $("#txtMDNit").val() + "', 'Telefono':'" + $("#txtMDTelefono").val() + "', 'Direccion':'" + $("#txtMDDireccion").val() + "', 'Correo':'" + $("#txtCorreo").val() + "', 'Celular':'" + $("#txtCelular").val() + "', 'Estatus':" + $("#DropEstatus").val() + "}",
             dataType: 'json',
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 if (data.d[0].StrError == "0") {
-                    $(".TablaVehiculos").dataTable().fnClearTable();
-                    MostrarVehiculos(0);
+                    $(".TablaClientes").dataTable().fnClearTable();
+                    MostrarClientes(0);
                     $("input:text, input:hidden").val("");
                     jQuery.gritter.add({
                         title: 'Exito!',
@@ -117,7 +108,9 @@ $(document).ready(function () {
                         sticky: false,
                         time: ''
                     });
-                    $('.ModalEditarVehiculo').modal('toggle');
+                    
+                    $('.ModalEditarVehiculo').modal('hide');
+                    MostrarClientes(0);
                 } else {
                     jQuery.gritter.add({
                         title: 'Se Ha Producido Un Error!',
@@ -144,21 +137,12 @@ $(document).ready(function () {
 
 });
 $(document).ready(function () {
-    $("#BtnGuardarV").click(function () {
-        var tipo = $("#DropTipoVehiculo").val();
-        var departamento = $("#DropDepartamento").val();
-        var status = false;
-        if ($("#DropEstatus").val() == 1) {
-            status = true;
-        }
-        var pool = false;
-        if ($("#CheckPool div:eq(0)").hasClass("active")) {
-            pool = true;
-        }
+    $("#BtnGuardarC").click(function () {
+    
         $.ajax({
             type: "POST",
-            url: "WebService.asmx/GuardarVehiculo",
-            data: "{'codigo':'" + $("#textMDCodigo").val() + "', 'placa':'" + $("#textMDPlaca").val() + "', 'kma':'" + $("#txtMDKilometraje").val() + "', 'marca':'" + $("#txtMDMarca").val() + "', 'linea':'" + $("#txtMDLinea").val() + "', 'modelo':'" + $("#txtMDModelo").val() + "', 'tipo':'" + tipo + "', 'departamento':'" + departamento + "', 'contable':'" + $("#txtMDContable").val() + "', 'status':" + status + ", 'cllantas':" + $("#txtMDCllantas").val() + ", 'repuesto':" + $("#txtMDCllantasR").val() + ", 'pool':" + pool + "}",
+            url: "wsCliente.asmx/GuardarCliente",
+            data: "{'Nombre':'" + $("#textMDNombre").val() + "', 'Nit':'" + $("#txtMDNit").val() + "', 'Telefono':'" + $("#txtMDTelefono").val() + "', 'Direccion':'" + $("#txtMDDireccion").val() + "', 'Correo':'" + $("#txtCorreo").val() + "', 'Celular':'" + $("#txtCelular").val() + "', 'Estatus':" + $("#DropEstatus").val() + "}",
             dataType: 'json',
             contentType: "application/json; charset=utf-8",
             success: function (data) {
@@ -173,29 +157,9 @@ $(document).ready(function () {
                         sticky: false,
                         time: ''
                     });
-                    $.ajax({
-                        type: "POST",
-                        url: "WebService.asmx/CatalogoVehiculos",
-                        data: "{ 'IdVehiculo': " + NuevoId + " }",
-                        dataType: 'json',
-                        contentType: "application/json; charset=utf-8",
-                        success: function (data) {
-                            $.each(data.d, function (index, item) {
-                                $(".TablaVehiculos").dataTable().fnAddData([
-                                    item.codigo,
-                                    item.placa,
-                                    item.kma,
-                                    item.marca,
-                                    item.linea,
-                                    item.modelo,
-                                    item.tipo,
-                                    item.departamento,
-                                    "<button type='button' id='" + item.Id + "' class='btn btn-default btn-xs BtnEditarVehiculo'  aria-label='Left Align'><i class='glyphicon glyphicon-edit EditarVehiculo'></i> Editar</button>"
-                                ]);
-                            });
-                        }
-                    });
-                    $('.ModalEditarVehiculo').modal('toggle');
+                  
+                    $('.ModalEditarVehiculo').modal('hide');
+                    MostrarClientes(0);
                 } else {
                     jQuery.gritter.add({
                         title: 'Se Ha Producido Un Error!',

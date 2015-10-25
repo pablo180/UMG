@@ -1,5 +1,6 @@
 ﻿<%@ Application Language="VB" %>
 <%@ Import Namespace="System.Web.Routing" %> 
+
 <script runat="server">
 
     Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
@@ -44,4 +45,5 @@
         ' is set to InProc in the Web.config file. If session mode is set to StateServer 
         ' or SQLServer, the event is not raised.
     End Sub
+
 </script>

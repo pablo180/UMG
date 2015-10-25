@@ -115,4 +115,55 @@ Public Class wsCliente
         End Using
         Return result
     End Function
+
+    Public Class ClassGuardarCliente
+        Public StrError As String = "0"
+        Public IdVehiculo As Integer
+    End Class
+    <WebMethod()>
+    Public Function GuardarCliente(ByVal Nombre As String, ByVal Nit As String, ByVal Telefono As String, ByVal Direccion As String, ByVal Correo As String, ByVal Celular As String, ByVal Estatus As Integer) As List(Of ClassGuardarCliente)
+        Dim result As List(Of ClassGuardarCliente) = New List(Of ClassGuardarCliente)
+        Try
+            Dim IdVehiculo As Integer = MyDB.MyInsertIdentity("INSERT INTO `facturacionsat`.`cliente` (`Nombre`, `Nit`, `Telefono`, `Direccion`, `Correo`, `Celular`, `Estado`) VALUES ('" & Nombre & "', '" & Nit & "', '" & Telefono & "', '" & Direccion & "', '" & Correo & "', '" & Celular & "', " & Estatus & ");")
+            Dim elemento As New ClassGuardarCliente
+            elemento.StrError = "0"
+            elemento.IdVehiculo = IdVehiculo
+            result.Add(elemento)
+        Catch ex As Exception
+            Dim elemento As New ClassGuardarCliente
+            elemento.StrError = ex.Message
+            result.Add(elemento)
+        Finally
+        End Try
+        Return result
+    End Function
+
+    Public Class ClassEditarCliente
+        Public StrError As String = "0"
+    End Class
+    <WebMethod()>
+    Public Function EditarCliente(ByVal Id As Integer, ByVal Nombre As String, ByVal Nit As String, ByVal Telefono As String, ByVal Direccion As String, ByVal Correo As String, ByVal Celular As String, ByVal Estatus As Integer) As List(Of ClassEditarCliente)
+        Dim result As List(Of ClassEditarCliente) = New List(Of ClassEditarCliente)
+        Using conexion As New MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("Conn").ConnectionString)
+            conexion.Open()
+            Try
+                Dim ct As String = "UPDATE `facturacionsat`.`cliente` SET `Nombre`='" & Nombre & "', `Telefono`='" & Telefono & "', `Direccion`='" & Direccion & "', `Correo`='" & Correo & "', `Celular`='" & Celular & "', `Estado`='" & Estatus & "' WHERE `IdCliente`='" & Id & "' and`Nit`='" & Nit & "';"
+                Dim command As New MySqlCommand
+                command.Connection = conexion
+                command.CommandText = ct
+                command.ExecuteNonQuery()
+
+                Dim elemento As New ClassEditarCliente
+                elemento.StrError = "0"
+                result.Add(elemento)
+            Catch ex As Exception
+                Dim elemento As New ClassEditarCliente
+                elemento.StrError = ex.Message
+                result.Add(elemento)
+            Finally
+            End Try
+            conexion.Close()
+        End Using
+        Return result
+    End Function
 End Class

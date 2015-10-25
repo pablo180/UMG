@@ -142,8 +142,8 @@
                 </div>
                 <div class="col-md-2">
                     <div class="btn-demo">
-                        <input type="button" id="BtnEditarV" class="btn btn-primary" value="Guardar" />
-                        <input type="button" id="BtnGuardarV" class="btn btn-primary" value="Guardar" />
+                        <input type="button" id="BtnEditarC" class="btn btn-primary" value="Guardar" />
+                        <input type="button" id="BtnGuardarC" class="btn btn-primary" value="Guardar" />
                        <div class="col-md-12"> 
                     
                 </div>
