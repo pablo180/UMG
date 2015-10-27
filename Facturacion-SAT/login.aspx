@@ -32,9 +32,9 @@
 		<section id="intro" class="main style1 dark fullscreen">
 				<div class="content container 100%">
 					<header>
-						<h2>MONITOREO</h2>
+						<h2>FACTURACION</h2>
 					</header>
-						<p>Bienvenido al <strong>Sistema de Monitoreo</strong> 
+						<p>Bienvenido al <strong>Sistema de Facturacion</strong> 
 				
 					<footer>
 						<a href="#one" class="button style2 down">More</a>
@@ -60,7 +60,7 @@
            	</div>
 				<!--<a href="#two" class="button style2 down anchored">Next</a> -->
                    	<ul class="menu">
-						<li></li><li><a href=>Todos los derechos reservados a Union Systems</a></li>
+						<li></li><li><a href=>Todos los derechos reservados a GSIS</a></li>
 					</ul>
 			</section>
        
