@@ -25,6 +25,9 @@
         RouteTable.Routes.MapPageRoute("RendimientoPorMarca", "RendimientoPorMarca", "~/privado/rendimientomarca.aspx")
         RouteTable.Routes.MapPageRoute("RecibosViaticos", "RecibosViaticos", "~/privado/recibosdeviaticos.aspx")
         RouteTable.Routes.MapPageRoute("Clientes", "Clientes", "~/privado/Clientes.aspx")
+        RouteTable.Routes.MapPageRoute("Proveedores", "Proveedores", "~/privado/Proveedores.aspx")
+        RouteTable.Routes.MapPageRoute("Productos", "Productos", "~/privado/Productos.aspx")
+        RouteTable.Routes.MapPageRoute("Categorias", "Categorias", "~/privado/Categorias.aspx")
 
 
         RouteTable.Routes.MapPageRoute("CargarFacturas", "CargarFacturas", "~/privado/CargarFacturas.aspx")

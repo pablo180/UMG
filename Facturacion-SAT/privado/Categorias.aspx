@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Proveedores.aspx.vb" Inherits="privado_Proveedores" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Categorias.aspx.vb" Inherits="privado_Categorias" %>
 
 <!DOCTYPE html>
 
@@ -47,7 +47,7 @@
       <!-- #INCLUDE FILE="usuariomenu.html" --> 
     </div><!-- headerbar -->
     <div class="pageheader">
-      <h2><i class="fa fa-edit"></i> Proveedores <span>Catalogos...</span></h2>
+      <h2><i class="fa fa-edit"></i> Categorias <span>Catalogos...</span></h2>
     </div>
     <div class="contentpanel">
           <div class="panel panel-default panel-alt widget-messaging">
@@ -55,21 +55,17 @@
               <div class="panel-btns">
                 <a class="panel-edit"><button type="button" class="btn btn-primary btn-xs" id="BtnNuevoCliente"><i class="fa fa-plus-circle"></i> Nuevo</button></a>
               </div><!-- panel-btns -->
-              <h3 class="panel-title">Proveedores</h3>
+              <h3 class="panel-title">Categorias</h3>
             </div>
             <div class="panel-body">
-                <table class="table table-hidaction table-hover mb30 TablaClientes" >
+                <table class="table table-hidaction table-hover mb30 TablaCategorias" >
                     <thead>
                         <tr>
                             <th>Codigo</th>
-                            <th>Nombre</th>
-                            <th>Nit</th>
-                            <th>Telefono</th>
-                            <th>Celular</th>
-                            <th>Direccion</th>
-                            <th>Correo</th>
+                            <th>Descripcion</th>
                             <th>Estado</th>
                             <th></th>
+                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -85,46 +81,18 @@
     <div class="modal-content">
         <div class="modal-header">
             <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
-            <h4 class="modal-title"><span style="display:none" id="LblModificar">Modificaion</span><span style="display:none" id="LblCrear">Creacion</span> de  Cliente a: <i><label id="Label1"></label></i></h4>
+            <h4 class="modal-title"><span style="display:none" id="LblModificar">Modificaion</span><span style="display:none" id="Lbl">Creacion</span><span style="display:none" id="LblCrear">Creacion</span> <span style="display:none" id="LblEliminar">Eliminacion </span>de  Categoria : <i><label id="Label1"></label></i></h4>
         </div>
         <div class="modal-body">
         <input type="hidden" id="Hidden1" />
         
-            <div class="form-group">
-                     <label class="col-md-2">Nombre:</label>
+            <div class="form-group" style=display:none id="divformulario" >
+                     <label class="col-md-2">Descripcion:</label>
                 <div class="col-md-4">
                     <input type="text" id="textMDNombre"  name="textMDNombre" class="form-control" />
                     <input type="hidden" id="textMDId" name="textMDId" class="form-control" />
 
                 </div>
-                <label class="col-md-2">Nit:</label>
-                <div class="col-md-4">
-                <input type="text" id="txtMDNit"  name="txtMDNit" class="form-control" />
-                </div>
-            
-            </div>
-            <div class="form-group">
-                <label class="col-md-2">Telefono:</label>
-                 <div class="col-md-4">
-                <input type="text" id="txtMDTelefono"  name="txtMDTelefono" class="form-control" />
-                </div>
-                <label class="col-md-2">Direccion:</label>
-                  <div class="col-md-4">
-                <input type="text" id="txtMDDireccion"  name="txtMDDireccion" class="form-control" />
-                 </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2">Correo:</label>
-                <div class="col-md-4">
-                  <input type="text" id="txtCorreo"  name="txtCorreo" class="form-control" />
-                </div>
-                <label class="col-md-2">Celular:</label>
-                <div class="col-md-4">
-                            <input type="text" id="txtCelular"  name="txtCelular" class="form-control" />
-                </div>
-            </div>
-             <div class="form-group">
-              
                 <label class="col-md-2">Estatus:</label>
                   <div class="col-md-4">
                      <select id="DropEstatus" name="DropEstatus" style="width:100%;">
@@ -132,24 +100,60 @@
                         <option value="0">Baja</option>
                      </select>
                  </div>
+            
             </div>
-  
-           
+
+             <div class="form-group" style=display:none id="divformularioEliminar" >
+                 <h3>¿Esta Seguro que desea eliminar esta categoria?</h3>
+                 </div>
+
+            <div class="form-group" style=display:none id="divformularioVerificar" >
+            <div class="form-group" 
+                <h2>Los siguientes productos tienen la clasificacion que desea eliminar por favor cambielos de claficiacion para poder continuar </h2>
+                  </div>
+            <div class="form-group">
+
+                <table class="table table-hidaction table-hover mb30 TablaProductos" >
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Descripcion</th>
+                        
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                  </div>
+                 </div>
+       </div>
+      
             <div class="form-group">
                 <div class="col-md-4">
                 </div>
-                 <div class="col-md-6">
+                 <div class="col-md-4">
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-4">
                     <div class="btn-demo">
+                          <div class="form-group">
+                                          <div class="col-md-6">
                         <input type="button" id="BtnEditarC" class="btn btn-primary" value="Guardar" />
                         <input type="button" id="BtnGuardarC" class="btn btn-primary" value="Guardar" />
+                        <input type="button" id="BtnEliminarC" class="btn btn-primary" value="Eliminar" />
+                                                  </div>
+                                                  <div class="col-md-6">
+                        <input type="button" id="BtnCancelarC" class="btn btn-danger" value="Cancelar" />
+                                                          </div>
+                 </div>
                        <div class="col-md-12"> 
                     
                 </div>
             </div>
         </div>
     </div>
+           
+       
   </div>
 </div>
 </form>
@@ -175,7 +179,7 @@
 <script src="js/custom.js"></script>
 <script src="js/jquery.datatables.min.js"></script>
 <script src="js/Script.js?v=1"></script>
-<script src="js/funciones/Proveedores.js?v=1"></script>
+<script src="js/funciones/Categorias.js?v=1"></script>
 
 
 

@@ -49,7 +49,7 @@ Public Class wsProveedores
             Try
                 conexion.Open()
 
-                consulta = "SELECT idCliente,Nombre,Nit,Telefono,Direccion,Correo,Celular,Estado FROM facturacionsat.cliente;"
+                consulta = "SELECT idCliente,Nombre,Nit,Telefono,Direccion,Correo,Celular,Estado FROM facturacionsat.proveedor;"
                 Dim cmd As New MySqlCommand(consulta, conexion)
                 Dim reader As MySqlDataReader = cmd.ExecuteReader
                 While reader.Read
@@ -124,7 +124,7 @@ Public Class wsProveedores
     Public Function GuardarCliente(ByVal Nombre As String, ByVal Nit As String, ByVal Telefono As String, ByVal Direccion As String, ByVal Correo As String, ByVal Celular As String, ByVal Estatus As Integer) As List(Of ClassGuardarCliente)
         Dim result As List(Of ClassGuardarCliente) = New List(Of ClassGuardarCliente)
         Try
-            Dim IdVehiculo As Integer = MyDB.MyInsertIdentity("INSERT INTO `facturacionsat`.`cliente` (`Nombre`, `Nit`, `Telefono`, `Direccion`, `Correo`, `Celular`, `Estado`) VALUES ('" & Nombre & "', '" & Nit & "', '" & Telefono & "', '" & Direccion & "', '" & Correo & "', '" & Celular & "', " & Estatus & ");")
+            Dim IdVehiculo As Integer = MyDB.MyInsertIdentity("INSERT INTO `facturacionsat`.`proveedor` (`Nombre`, `Nit`, `Telefono`, `Direccion`, `Correo`, `Celular`, `Estado`) VALUES ('" & Nombre & "', '" & Nit & "', '" & Telefono & "', '" & Direccion & "', '" & Correo & "', '" & Celular & "', " & Estatus & ");")
             Dim elemento As New ClassGuardarCliente
             elemento.StrError = "0"
             elemento.IdVehiculo = IdVehiculo
@@ -147,7 +147,7 @@ Public Class wsProveedores
         Using conexion As New MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("Conn").ConnectionString)
             conexion.Open()
             Try
-                Dim ct As String = "UPDATE `facturacionsat`.`cliente` SET `Nombre`='" & Nombre & "', `Telefono`='" & Telefono & "', `Direccion`='" & Direccion & "', `Correo`='" & Correo & "', `Celular`='" & Celular & "', `Estado`='" & Estatus & "' WHERE `IdCliente`='" & Id & "' and`Nit`='" & Nit & "';"
+                Dim ct As String = "UPDATE `facturacionsat`.`proveedor` SET `Nombre`='" & Nombre & "', `Telefono`='" & Telefono & "', `Direccion`='" & Direccion & "', `Correo`='" & Correo & "', `Celular`='" & Celular & "', `Estado`='" & Estatus & "' WHERE `IdCliente`='" & Id & "' and`Nit`='" & Nit & "';"
                 Dim command As New MySqlCommand
                 command.Connection = conexion
                 command.CommandText = ct
