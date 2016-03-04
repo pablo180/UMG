@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GeofenceReportDataByPlate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPlate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeofenceReportDataByPlateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GeofenceReportDataByPlateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDistanceDataByPlate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPlate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStartDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDistanceDataByPlateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDistanceDataByPlateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDistanceDataRangeByPlate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPlate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStartDate1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStartDate2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDistanceDataRangeByPlateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDistanceDataRangeByPlateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataDataLinkByPlate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPlate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStartDate1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStartDate2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataDataLinkByPlateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataDataLinkByPlateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataDataLinkTotals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPlate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataDataLinkTotalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataDataLinkTotalsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDailyActivityDataRangeByPlate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPlate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStartDate1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStartDate2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDailyActivityDataRangeByPlateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDailyActivityDataRangeByPlateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStopsDataRangeByPlate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPlate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStartDate1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStartDate2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iTime" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStopsDataRangeByPlateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStopsDataRangeByPlateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GeofenceReportDataByPlateSoapIn">
+    <wsdl:part name="parameters" element="tns:GeofenceReportDataByPlate" />
+  </wsdl:message>
+  <wsdl:message name="GeofenceReportDataByPlateSoapOut">
+    <wsdl:part name="parameters" element="tns:GeofenceReportDataByPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDistanceDataByPlateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDistanceDataByPlate" />
+  </wsdl:message>
+  <wsdl:message name="GetDistanceDataByPlateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDistanceDataByPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDistanceDataRangeByPlateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDistanceDataRangeByPlate" />
+  </wsdl:message>
+  <wsdl:message name="GetDistanceDataRangeByPlateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDistanceDataRangeByPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataDataLinkByPlateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataDataLinkByPlate" />
+  </wsdl:message>
+  <wsdl:message name="GetDataDataLinkByPlateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataDataLinkByPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataDataLinkTotalsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataDataLinkTotals" />
+  </wsdl:message>
+  <wsdl:message name="GetDataDataLinkTotalsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataDataLinkTotalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDailyActivityDataRangeByPlateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDailyActivityDataRangeByPlate" />
+  </wsdl:message>
+  <wsdl:message name="GetDailyActivityDataRangeByPlateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDailyActivityDataRangeByPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStopsDataRangeByPlateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStopsDataRangeByPlate" />
+  </wsdl:message>
+  <wsdl:message name="GetStopsDataRangeByPlateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStopsDataRangeByPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeofenceReportDataByPlateHttpGetIn">
+    <wsdl:part name="sLogin" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+    <wsdl:part name="sStartDate" type="s:string" />
+    <wsdl:part name="sEndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GeofenceReportDataByPlateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetDistanceDataByPlateHttpGetIn">
+    <wsdl:part name="sLogin" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+    <wsdl:part name="sStartDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDistanceDataByPlateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetDistanceDataRangeByPlateHttpGetIn">
+    <wsdl:part name="sLogin" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+    <wsdl:part name="sStartDate1" type="s:string" />
+    <wsdl:part name="sStartDate2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDistanceDataRangeByPlateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetDataDataLinkByPlateHttpGetIn">
+    <wsdl:part name="sLogin" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+    <wsdl:part name="sStartDate1" type="s:string" />
+    <wsdl:part name="sStartDate2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDataDataLinkByPlateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetDataDataLinkTotalsHttpGetIn">
+    <wsdl:part name="sLogin" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDataDataLinkTotalsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetDailyActivityDataRangeByPlateHttpGetIn">
+    <wsdl:part name="sLogin" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+    <wsdl:part name="sStartDate1" type="s:string" />
+    <wsdl:part name="sStartDate2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDailyActivityDataRangeByPlateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetStopsDataRangeByPlateHttpGetIn">
+    <wsdl:part name="sLogin" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+    <wsdl:part name="sStartDate1" type="s:string" />
+    <wsdl:part name="sStartDate2" type="s:string" />
+    <wsdl:part name="iTime" type="s:string" />
+    <wsdl:part name="sType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStopsDataRangeByPlateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GeofenceReportDataByPlateHttpPostIn">
+    <wsdl:part name="sLogin" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+    <wsdl:part name="sStartDate" type="s:string" />
+    <wsdl:part name="sEndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GeofenceReportDataByPlateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetDistanceDataByPlateHttpPostIn">
+    <wsdl:part name="sLogin" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+    <wsdl:part name="sStartDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDistanceDataByPlateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetDistanceDataRangeByPlateHttpPostIn">
+    <wsdl:part name="sLogin" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+    <wsdl:part name="sStartDate1" type="s:string" />
+    <wsdl:part name="sStartDate2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDistanceDataRangeByPlateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetDataDataLinkByPlateHttpPostIn">
+    <wsdl:part name="sLogin" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+    <wsdl:part name="sStartDate1" type="s:string" />
+    <wsdl:part name="sStartDate2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDataDataLinkByPlateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetDataDataLinkTotalsHttpPostIn">
+    <wsdl:part name="sLogin" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDataDataLinkTotalsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetDailyActivityDataRangeByPlateHttpPostIn">
+    <wsdl:part name="sLogin" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+    <wsdl:part name="sStartDate1" type="s:string" />
+    <wsdl:part name="sStartDate2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDailyActivityDataRangeByPlateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetStopsDataRangeByPlateHttpPostIn">
+    <wsdl:part name="sLogin" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+    <wsdl:part name="sStartDate1" type="s:string" />
+    <wsdl:part name="sStartDate2" type="s:string" />
+    <wsdl:part name="iTime" type="s:string" />
+    <wsdl:part name="sType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStopsDataRangeByPlateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="wsReportsSoap">
+    <wsdl:operation name="GeofenceReportDataByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML de las entrada y salida de zonas de un placa en un rango de fechas no mayor a 30 días.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar.&lt;br&gt;&lt;b&gt;dStartDate:&lt;/b&gt; Fecha inicial de historico (yyyy/MM/dd HH:mm:ss).&lt;br&gt;&lt;b&gt;dEndDate:&lt;/b&gt; Fecha final del historico (yyyy/MM/dd HH:mm:ss).</wsdl:documentation>
+      <wsdl:input message="tns:GeofenceReportDataByPlateSoapIn" />
+      <wsdl:output message="tns:GeofenceReportDataByPlateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistanceDataByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con la distancia ejecutada en un rango de fechas.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar.&lt;br&gt;&lt;b&gt;sStartDate:&lt;/b&gt; Fecha inicial de historico (yyyy/MM/dd).&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetDistanceDataByPlateSoapIn" />
+      <wsdl:output message="tns:GetDistanceDataByPlateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistanceDataRangeByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con la distancia ejecutada en un rango de fechas.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar 'Si esta vacia consultara todos los moviles'.&lt;br&gt;&lt;b&gt;sStartDate1:&lt;/b&gt; Fecha inicial de historico (yyyy/MM/dd).&lt;br&gt;&lt;b&gt;sStartDate2:&lt;/b&gt; Fecha final de historico (yyyy/MM/dd).&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetDistanceDataRangeByPlateSoapIn" />
+      <wsdl:output message="tns:GetDistanceDataRangeByPlateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataDataLinkByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con datos enviados por el datalink en un rango de fechas.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar 'Si esta vacia consultara todos los moviles'.&lt;br&gt;&lt;b&gt;sStartDate1:&lt;/b&gt; Fecha inicial de historico (yyyy/MM/dd).&lt;br&gt;&lt;b&gt;sStartDate2:&lt;/b&gt; Fecha final de historico (yyyy/MM/dd).&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetDataDataLinkByPlateSoapIn" />
+      <wsdl:output message="tns:GetDataDataLinkByPlateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataDataLinkTotals">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con los Totales de cada vehiculo.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar 'Si esta vacia consultara todos los moviles'.&lt;br&gt;&lt;b&gt;sStartDate1:&lt;/b&gt; </wsdl:documentation>
+      <wsdl:input message="tns:GetDataDataLinkTotalsSoapIn" />
+      <wsdl:output message="tns:GetDataDataLinkTotalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDailyActivityDataRangeByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con el reporte de actividad diaria ejecutada en un rango de fechas.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar 'Si esta vacia consultara todos los moviles'.&lt;br&gt;&lt;b&gt;sStartDate1:&lt;/b&gt; Fecha inicial de historico (yyyy/MM/dd).&lt;br&gt;&lt;b&gt;sStartDate2:&lt;/b&gt; Fecha final de historico (yyyy/MM/dd).&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetDailyActivityDataRangeByPlateSoapIn" />
+      <wsdl:output message="tns:GetDailyActivityDataRangeByPlateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStopsDataRangeByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con la paradas realizadas en un rango de fechas y tiempo de parada.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar 'Si esta vacia consultara todos los moviles'.&lt;br&gt;&lt;b&gt;sStartDate1:&lt;/b&gt;Fecha inicial de historico (yyyy/MM/dd).&lt;br&gt;&lt;b&gt;sStartDate2:&lt;/b&gt; Fecha final de historico (yyyy/MM/dd).&lt;br&gt;&lt;b&gt;iTime:&lt;/b&gt; Tiempo transcurrido para contarlo como parada.&lt;br&gt;&lt;b&gt;sType:&lt;/b&gt; Tipo de parada [IDLE,ON-FF], para Las dos dejarlo en blanco .&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetStopsDataRangeByPlateSoapIn" />
+      <wsdl:output message="tns:GetStopsDataRangeByPlateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="wsReportsHttpGet">
+    <wsdl:operation name="GeofenceReportDataByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML de las entrada y salida de zonas de un placa en un rango de fechas no mayor a 30 días.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar.&lt;br&gt;&lt;b&gt;dStartDate:&lt;/b&gt; Fecha inicial de historico (yyyy/MM/dd HH:mm:ss).&lt;br&gt;&lt;b&gt;dEndDate:&lt;/b&gt; Fecha final del historico (yyyy/MM/dd HH:mm:ss).</wsdl:documentation>
+      <wsdl:input message="tns:GeofenceReportDataByPlateHttpGetIn" />
+      <wsdl:output message="tns:GeofenceReportDataByPlateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistanceDataByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con la distancia ejecutada en un rango de fechas.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar.&lt;br&gt;&lt;b&gt;sStartDate:&lt;/b&gt; Fecha inicial de historico (yyyy/MM/dd).&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetDistanceDataByPlateHttpGetIn" />
+      <wsdl:output message="tns:GetDistanceDataByPlateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistanceDataRangeByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con la distancia ejecutada en un rango de fechas.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar 'Si esta vacia consultara todos los moviles'.&lt;br&gt;&lt;b&gt;sStartDate1:&lt;/b&gt; Fecha inicial de historico (yyyy/MM/dd).&lt;br&gt;&lt;b&gt;sStartDate2:&lt;/b&gt; Fecha final de historico (yyyy/MM/dd).&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetDistanceDataRangeByPlateHttpGetIn" />
+      <wsdl:output message="tns:GetDistanceDataRangeByPlateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataDataLinkByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con datos enviados por el datalink en un rango de fechas.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar 'Si esta vacia consultara todos los moviles'.&lt;br&gt;&lt;b&gt;sStartDate1:&lt;/b&gt; Fecha inicial de historico (yyyy/MM/dd).&lt;br&gt;&lt;b&gt;sStartDate2:&lt;/b&gt; Fecha final de historico (yyyy/MM/dd).&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetDataDataLinkByPlateHttpGetIn" />
+      <wsdl:output message="tns:GetDataDataLinkByPlateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataDataLinkTotals">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con los Totales de cada vehiculo.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar 'Si esta vacia consultara todos los moviles'.&lt;br&gt;&lt;b&gt;sStartDate1:&lt;/b&gt; </wsdl:documentation>
+      <wsdl:input message="tns:GetDataDataLinkTotalsHttpGetIn" />
+      <wsdl:output message="tns:GetDataDataLinkTotalsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDailyActivityDataRangeByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con el reporte de actividad diaria ejecutada en un rango de fechas.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar 'Si esta vacia consultara todos los moviles'.&lt;br&gt;&lt;b&gt;sStartDate1:&lt;/b&gt; Fecha inicial de historico (yyyy/MM/dd).&lt;br&gt;&lt;b&gt;sStartDate2:&lt;/b&gt; Fecha final de historico (yyyy/MM/dd).&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetDailyActivityDataRangeByPlateHttpGetIn" />
+      <wsdl:output message="tns:GetDailyActivityDataRangeByPlateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStopsDataRangeByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con la paradas realizadas en un rango de fechas y tiempo de parada.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar 'Si esta vacia consultara todos los moviles'.&lt;br&gt;&lt;b&gt;sStartDate1:&lt;/b&gt;Fecha inicial de historico (yyyy/MM/dd).&lt;br&gt;&lt;b&gt;sStartDate2:&lt;/b&gt; Fecha final de historico (yyyy/MM/dd).&lt;br&gt;&lt;b&gt;iTime:&lt;/b&gt; Tiempo transcurrido para contarlo como parada.&lt;br&gt;&lt;b&gt;sType:&lt;/b&gt; Tipo de parada [IDLE,ON-FF], para Las dos dejarlo en blanco .&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetStopsDataRangeByPlateHttpGetIn" />
+      <wsdl:output message="tns:GetStopsDataRangeByPlateHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="wsReportsHttpPost">
+    <wsdl:operation name="GeofenceReportDataByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML de las entrada y salida de zonas de un placa en un rango de fechas no mayor a 30 días.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar.&lt;br&gt;&lt;b&gt;dStartDate:&lt;/b&gt; Fecha inicial de historico (yyyy/MM/dd HH:mm:ss).&lt;br&gt;&lt;b&gt;dEndDate:&lt;/b&gt; Fecha final del historico (yyyy/MM/dd HH:mm:ss).</wsdl:documentation>
+      <wsdl:input message="tns:GeofenceReportDataByPlateHttpPostIn" />
+      <wsdl:output message="tns:GeofenceReportDataByPlateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistanceDataByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con la distancia ejecutada en un rango de fechas.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar.&lt;br&gt;&lt;b&gt;sStartDate:&lt;/b&gt; Fecha inicial de historico (yyyy/MM/dd).&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetDistanceDataByPlateHttpPostIn" />
+      <wsdl:output message="tns:GetDistanceDataByPlateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistanceDataRangeByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con la distancia ejecutada en un rango de fechas.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar 'Si esta vacia consultara todos los moviles'.&lt;br&gt;&lt;b&gt;sStartDate1:&lt;/b&gt; Fecha inicial de historico (yyyy/MM/dd).&lt;br&gt;&lt;b&gt;sStartDate2:&lt;/b&gt; Fecha final de historico (yyyy/MM/dd).&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetDistanceDataRangeByPlateHttpPostIn" />
+      <wsdl:output message="tns:GetDistanceDataRangeByPlateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataDataLinkByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con datos enviados por el datalink en un rango de fechas.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar 'Si esta vacia consultara todos los moviles'.&lt;br&gt;&lt;b&gt;sStartDate1:&lt;/b&gt; Fecha inicial de historico (yyyy/MM/dd).&lt;br&gt;&lt;b&gt;sStartDate2:&lt;/b&gt; Fecha final de historico (yyyy/MM/dd).&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetDataDataLinkByPlateHttpPostIn" />
+      <wsdl:output message="tns:GetDataDataLinkByPlateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataDataLinkTotals">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con los Totales de cada vehiculo.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar 'Si esta vacia consultara todos los moviles'.&lt;br&gt;&lt;b&gt;sStartDate1:&lt;/b&gt; </wsdl:documentation>
+      <wsdl:input message="tns:GetDataDataLinkTotalsHttpPostIn" />
+      <wsdl:output message="tns:GetDataDataLinkTotalsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDailyActivityDataRangeByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con el reporte de actividad diaria ejecutada en un rango de fechas.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar 'Si esta vacia consultara todos los moviles'.&lt;br&gt;&lt;b&gt;sStartDate1:&lt;/b&gt; Fecha inicial de historico (yyyy/MM/dd).&lt;br&gt;&lt;b&gt;sStartDate2:&lt;/b&gt; Fecha final de historico (yyyy/MM/dd).&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetDailyActivityDataRangeByPlateHttpPostIn" />
+      <wsdl:output message="tns:GetDailyActivityDataRangeByPlateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStopsDataRangeByPlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna un XML Con la paradas realizadas en un rango de fechas y tiempo de parada.&lt;br&gt;&lt;b&gt;sLogin:&lt;/b&gt; Login autorizado en el sistema.&lt;br&gt;&lt;b&gt;sPassword:&lt;/b&gt; Password del login proporcionado.&lt;br&gt;&lt;b&gt;sPlate:&lt;/b&gt; Placa del móvil que se desea consultar 'Si esta vacia consultara todos los moviles'.&lt;br&gt;&lt;b&gt;sStartDate1:&lt;/b&gt;Fecha inicial de historico (yyyy/MM/dd).&lt;br&gt;&lt;b&gt;sStartDate2:&lt;/b&gt; Fecha final de historico (yyyy/MM/dd).&lt;br&gt;&lt;b&gt;iTime:&lt;/b&gt; Tiempo transcurrido para contarlo como parada.&lt;br&gt;&lt;b&gt;sType:&lt;/b&gt; Tipo de parada [IDLE,ON-FF], para Las dos dejarlo en blanco .&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetStopsDataRangeByPlateHttpPostIn" />
+      <wsdl:output message="tns:GetStopsDataRangeByPlateHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsReportsSoap" type="tns:wsReportsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GeofenceReportDataByPlate">
+      <soap:operation soapAction="http://tempuri.org/GeofenceReportDataByPlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistanceDataByPlate">
+      <soap:operation soapAction="http://tempuri.org/GetDistanceDataByPlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistanceDataRangeByPlate">
+      <soap:operation soapAction="http://tempuri.org/GetDistanceDataRangeByPlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataDataLinkByPlate">
+      <soap:operation soapAction="http://tempuri.org/GetDataDataLinkByPlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataDataLinkTotals">
+      <soap:operation soapAction="http://tempuri.org/GetDataDataLinkTotals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDailyActivityDataRangeByPlate">
+      <soap:operation soapAction="http://tempuri.org/GetDailyActivityDataRangeByPlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStopsDataRangeByPlate">
+      <soap:operation soapAction="http://tempuri.org/GetStopsDataRangeByPlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsReportsSoap12" type="tns:wsReportsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GeofenceReportDataByPlate">
+      <soap12:operation soapAction="http://tempuri.org/GeofenceReportDataByPlate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistanceDataByPlate">
+      <soap12:operation soapAction="http://tempuri.org/GetDistanceDataByPlate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistanceDataRangeByPlate">
+      <soap12:operation soapAction="http://tempuri.org/GetDistanceDataRangeByPlate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataDataLinkByPlate">
+      <soap12:operation soapAction="http://tempuri.org/GetDataDataLinkByPlate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataDataLinkTotals">
+      <soap12:operation soapAction="http://tempuri.org/GetDataDataLinkTotals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDailyActivityDataRangeByPlate">
+      <soap12:operation soapAction="http://tempuri.org/GetDailyActivityDataRangeByPlate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStopsDataRangeByPlate">
+      <soap12:operation soapAction="http://tempuri.org/GetStopsDataRangeByPlate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsReportsHttpGet" type="tns:wsReportsHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GeofenceReportDataByPlate">
+      <http:operation location="/GeofenceReportDataByPlate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistanceDataByPlate">
+      <http:operation location="/GetDistanceDataByPlate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistanceDataRangeByPlate">
+      <http:operation location="/GetDistanceDataRangeByPlate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataDataLinkByPlate">
+      <http:operation location="/GetDataDataLinkByPlate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataDataLinkTotals">
+      <http:operation location="/GetDataDataLinkTotals" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDailyActivityDataRangeByPlate">
+      <http:operation location="/GetDailyActivityDataRangeByPlate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStopsDataRangeByPlate">
+      <http:operation location="/GetStopsDataRangeByPlate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsReportsHttpPost" type="tns:wsReportsHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GeofenceReportDataByPlate">
+      <http:operation location="/GeofenceReportDataByPlate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistanceDataByPlate">
+      <http:operation location="/GetDistanceDataByPlate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistanceDataRangeByPlate">
+      <http:operation location="/GetDistanceDataRangeByPlate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataDataLinkByPlate">
+      <http:operation location="/GetDataDataLinkByPlate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataDataLinkTotals">
+      <http:operation location="/GetDataDataLinkTotals" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDailyActivityDataRangeByPlate">
+      <http:operation location="/GetDailyActivityDataRangeByPlate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStopsDataRangeByPlate">
+      <http:operation location="/GetStopsDataRangeByPlate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsReports">
+    <wsdl:port name="wsReportsSoap" binding="tns:wsReportsSoap">
+      <soap:address location="http://web1ws.shareservice.co/ws/wsReports.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsReportsSoap12" binding="tns:wsReportsSoap12">
+      <soap12:address location="http://web1ws.shareservice.co/ws/wsReports.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsReportsHttpGet" binding="tns:wsReportsHttpGet">
+      <http:address location="http://web1ws.shareservice.co/ws/wsReports.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsReportsHttpPost" binding="tns:wsReportsHttpPost">
+      <http:address location="http://web1ws.shareservice.co/ws/wsReports.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
