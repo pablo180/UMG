@@ -32,6 +32,7 @@
 
 
         RouteTable.Routes.MapPageRoute("CargarFacturas", "CargarFacturas", "~/privado/CargarFacturas.aspx")
+        RouteTable.Routes.MapPageRoute("IngresoDirectorio", "IngresoDirectorio", "~/privado/IngresoDirectorio.aspx")
 
     End Sub
     Sub Application_End(ByVal sender As Object, ByVal e As EventArgs)
