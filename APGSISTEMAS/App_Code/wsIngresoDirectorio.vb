@@ -10,9 +10,27 @@ Imports System.Web.Services.Protocols
 Public Class wsIngresoDirectorio
     Inherits System.Web.Services.WebService
 
-    <WebMethod()> _
-    Public Function HelloWorld() As String
-        Return "Hola a todos"
+ Public Class ClassGuardarCliente
+        Public StrError As String = "0"
+        Public IdVehiculo As Integer
+    End Class
+    <WebMethod()>
+    Public Function GuardarDirectorio(ByVal NombreCompania As String, ByVal Direccion As String, ByVal Departamento As String, ByVal Municipio As String, ByVal Telefono As String, ByVal NombreContacto As String, ByVal Observacion As String,ByVal Correo as String) As List(Of ClassGuardarCliente)
+        Dim result As List(Of ClassGuardarCliente) = New List(Of ClassGuardarCliente)
+        Try
+            Dim IdVehiculoI As Integer = MyDB.MyInsertIdentity("INSERT INTO directorio (NombreCompañia, Direccion, Departamento, Municipio, Telefono, NombreContacto, Observacion, Correo) VALUES ('" & NombreCompania & "', '" & Direccion & "', '" & Departamento & "', '" & Municipio & "', '"  & Telefono &"', '" & NombreContacto & "', '" & Observacion & "', '" & Correo & "');")
+            Dim elemento As New ClassGuardarCliente
+            elemento.StrError = "0"
+            elemento.IdVehiculo = IdVehiculoI
+            result.Add(elemento)
+        Catch ex As Exception
+            Dim elemento As New ClassGuardarCliente
+            elemento.StrError = ex.Message
+            result.Add(elemento)
+        Finally
+        End Try
+        Return result
     End Function
+
 
 End Class

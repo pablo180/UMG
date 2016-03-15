@@ -95,7 +95,10 @@
                                 <div class="col-sm-4">
                                     <input type="text" placeholder="" class="form-control" id="TxtObservacion" />
                                 </div>
-
+                                    <label class="col-sm-2 control-label">Correo</label>
+                                <div class="col-sm-4">
+                                    <input type="text" placeholder="" class="form-control" id="TxtCorreo" />
+                                </div>
                             </div>
 
                         
@@ -115,7 +118,7 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-sm-1 col-sm-offset-9">
-                                                <input type="button" class="btn btn-primary" id="BtnGuardarFacturaViaticos" value="Guardar" />
+                                                <input type="button" class="btn btn-primary" id="BtnGuardarDirectorio" value="Guardar" />
                                             </div>
                                             <div class="col-sm-1">
                                                 <button class="btn btn-danger" id="BtnCancelar">Cancelar</button>
