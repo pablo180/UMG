@@ -56,101 +56,13 @@
                 <a class="panel-edit"><button type="button" class="btn btn-primary btn-xs" id="BtnNuevoCliente"><i class="fa fa-plus-circle"></i> Nuevo</button></a>
               </div><!-- panel-btns -->
               <h3 class="panel-title">Clientes</h3>
-            </div>
-            <div class="panel-body">
-                <table class="table table-hidaction table-hover mb30 TablaClientes" >
-                    <thead>
-                        <tr>
-                            <th>Codigo</th>
-                            <th>Nombre</th>
-                            <th>Nit</th>
-                            <th>Telefono</th>
-                            <th>Celular</th>
-                            <th>Direccion</th>
-                            <th>Correo</th>
-                            <th>Estado</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div><!-- panel-body -->
-          </div><!-- panel -->
-    </div><!-- contentpanel -->
-  </div><!-- mainpanel -->
-</section>
-<div class="modal fade ModalEditarVehiculo" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
-            <h4 class="modal-title"><span style="display:none" id="LblModificar">Modificaion</span><span style="display:none" id="LblCrear">Creacion</span> de  Cliente a: <i><label id="Label1"></label></i></h4>
-        </div>
-        <div class="modal-body">
-        <input type="hidden" id="Hidden1" />
-        
-            <div class="form-group">
-                     <label class="col-md-2">Nombre:</label>
-                <div class="col-md-4">
-                    <input type="text" id="textMDNombre"  name="textMDNombre" class="form-control" />
-                    <input type="hidden" id="textMDId" name="textMDId" class="form-control" />
 
-                </div>
-                <label class="col-md-2">Nit:</label>
-                <div class="col-md-4">
-                <input type="text" id="txtMDNit"  name="txtMDNit" class="form-control" />
-                </div>
-            
+
+          
+        <div id="mapdiv" style="width: 100%; background-color:#EEEEEE; height: 500px;"></div>
+   
             </div>
-            <div class="form-group">
-                <label class="col-md-2">Telefono:</label>
-                 <div class="col-md-4">
-                <input type="text" id="txtMDTelefono"  name="txtMDTelefono" class="form-control" />
-                </div>
-                <label class="col-md-2">Direccion:</label>
-                  <div class="col-md-4">
-                <input type="text" id="txtMDDireccion"  name="txtMDDireccion" class="form-control" />
-                 </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2">Correo:</label>
-                <div class="col-md-4">
-                  <input type="text" id="txtCorreo"  name="txtCorreo" class="form-control" />
-                </div>
-                <label class="col-md-2">Celular:</label>
-                <div class="col-md-4">
-                            <input type="text" id="txtCelular"  name="txtCelular" class="form-control" />
-                </div>
-            </div>
-             <div class="form-group">
-              
-                <label class="col-md-2">Estatus:</label>
-                  <div class="col-md-4">
-                     <select id="DropEstatus" name="DropEstatus" style="width:100%;">
-                        <option value="1">Alta</option>
-                        <option value="0">Baja</option>
-                     </select>
-                 </div>
-            </div>
-  
-           
-            <div class="form-group">
-                <div class="col-md-4">
-                </div>
-                 <div class="col-md-6">
-                </div>
-                <div class="col-md-2">
-                    <div class="btn-demo">
-                        <input type="button" id="BtnEditarC" class="btn btn-primary" value="Guardar" />
-                        <input type="button" id="BtnGuardarC" class="btn btn-primary" value="Guardar" />
-                       <div class="col-md-12"> 
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
+         
 </div>
 </form>
 <script src="js/jquery-1.10.2.min.js"></script>
@@ -175,7 +87,11 @@
 <script src="js/custom.js"></script>
 <script src="js/jquery.datatables.min.js"></script>
 <script src="js/Script.js?v=1"></script>
-<script src="js/funciones/Cliente.js?v=1"></script>
+<script src="js/funciones/Directorios.js?v=1"></script>
+<link rel="stylesheet" href="js/ammap/ammap.css" type="text/css">
+<script src="js/ammap/ammap.js" type="text/javascript"></script>
+        <!-- map file should be included after ammap.js -->
+<script src="js/ammap/maps/js/guatemalaLow.js" type="text/javascript"></script>
 
 
 
