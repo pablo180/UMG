@@ -22,7 +22,7 @@ function LlenarDepartamentos() {
     });
     jQuery("select").chosen({ 'width': '100%', 'white-space': 'nowrap' });
 }
-//Esto es una prueba del uso del git con visual
+//Esto es una prueba del uso del git con visual ddsa
 function LlenarMunicipio(IdDepartamento) {
     $.ajax({
         type: "POST",
