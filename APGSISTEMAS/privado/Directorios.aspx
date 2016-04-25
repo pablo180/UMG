@@ -60,8 +60,25 @@
 
           
         <div id="mapdiv" style="width: 100%; background-color:#EEEEEE; height: 500px;"></div>
+
+        
+
+             <table class="table" id="tableDetalle" style="display:none;">
+                          <thead>
+                             <tr>
+                                <th>No</th>
+                                <th>Nombre</th>
+                                <th>Departamento</th>
+                                <th>Municipio</th>
+                                <th>Accion</th>
+                             </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                       </table>
+         </div>
    
-            </div>
+      
          
 </div>
 </form>
