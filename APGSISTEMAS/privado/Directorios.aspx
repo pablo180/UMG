@@ -53,7 +53,7 @@
           <div class="panel panel-default panel-alt widget-messaging">
           <div class="panel-heading">
               <div class="panel-btns">
-                <a class="panel-edit"><button type="button" class="btn btn-primary btn-xs" id="BtnNuevoCliente"><i class="fa fa-plus-circle"></i> Nuevo</button></a>
+                <a class="panel-edit"><button type="button" class="btn btn-primary btn-xs" id="BtnMostrarTodo"><i class="fa fa-plus-circle"></i> Mostrar Todas las Sucursales</button></a>
               </div><!-- panel-btns -->
               <h3 class="panel-title">Clientes</h3>
 
@@ -62,7 +62,14 @@
         <div id="mapdiv" style="width: 100%; background-color:#EEEEEE; height: 500px;"></div>
 
         
-
+            <div>
+                <div class="form-group">
+                    <div class="col-md-8">
+                        </div>
+                    <div class="col-md-4">
+               <input type="button" value="Regresar" id="btnRegresar" class="btn btn-danger btn-xs" style=display:none>
+                        </div>
+                </div>
              <table class="table" id="tableDetalle" style="display:none;">
                           <thead>
                              <tr>
@@ -76,8 +83,100 @@
                           <tbody>
                           </tbody>
                        </table>
+                </div>
          </div>
-   
+   <div class="modal fade ModalEditarVehiculo" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
+            <h4 class="modal-title"><span style="display:none" id="LblModificar">Modificaion</span><span style="display:none" id="LblCrear">Creacion</span> de  Cliente a: <i><label id="Label1"></label></i></h4>
+        </div>
+        <div class="modal-body">
+        <input type="hidden" id="Hidden1" />
+        
+                <div class="form-group">
+                                <label class="col-sm-2 control-label">Nombre Compañia</label>
+                                <div class="col-sm-4">
+                                    <input type="text" placeholder="Ej. A" class="form-control" id="TxtNombreCompañia" />
+                                </div>
+                                <label class="col-sm-2 control-label">Dirección</label>
+                                <div class="col-sm-4">
+                                    <input type="text" placeholder="Ej. 578" class="form-control" id="TxtDireccion" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Departamento</label>
+                                <div class="col-sm-4">
+                                    <select id="DropDepartamento" class="form-control"></select>
+                                </div>
+                                <label class="col-sm-2 control-label">Municipio</label>
+                                <div class="col-sm-4">
+                                    <select id="DropMunicipios" class="form-control"></select>
+                                </div>
+                            </div>
+                       
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Telefono</label>
+                                <div class="col-sm-4">
+                                    <div class="panel panel-default">
+                                        
+                                  <input type="text" placeholder="Ej. 578" class="form-control" id="TxtTelefono" />
+                                       
+                                    </div>
+                                </div>
+                                <label class="col-sm-2 control-label">Nombre Contacto</label>
+                                <div class="col-sm-4">
+                                    <input type="text" placeholder="" class="form-control" id="TxtNombreContacto" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Observaciones</label>
+                                <div class="col-sm-4">
+                                    <input type="text" placeholder="" class="form-control" id="TxtObservacion" />
+                                </div>
+                                    <label class="col-sm-2 control-label">Correo</label>
+                                <div class="col-sm-4">
+                                    <input type="text" placeholder="" class="form-control" id="TxtCorreo" />
+                                </div>
+                            </div>
+
+                        
+
+                        </div>
+                        <!-- panel-body -->
+                  
+                        <!-- panel-footer -->
+                    </div>
+                    <!-- panel -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+
+                                <div class="panel panel-default">
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-1 col-sm-offset-9">
+                                                <input type="button" class="btn btn-primary" id="BtnGuardarDirectorio" value="Guardar" />
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <button class="btn btn-danger" id="BtnCancelar">Cancelar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- table-responsive -->
+                        </div>
+                        <!-- col-md-12 -->
+                    </div>
+                    <!-- row -->
+                </div>
+</div>
+
       
          
 </div>

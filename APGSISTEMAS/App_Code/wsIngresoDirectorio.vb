@@ -123,7 +123,7 @@ Public Class wsIngresoDirectorio
             Try
                 conexion.Open()
 
-                consulta = "select d.idDirectorio,d.NombreCompañia,dp.nom_deptoS as depto,m.nom_mpioS as muni,d.Telefono, d.NombreContacto, d.Observacion, d.Correo, d.Departamento, d.Municipio  from directorio d left join departamentos dp on d.Departamento = dp.id_deptoS left join municipios m on d.Municipio= m.id_mpioS where  dp.nemonico_deptoS='" & nemonico & "';"
+                consulta = "select d.idDirectorio,d.NombreCompañia,dp.nom_deptoS as depto,m.nom_mpioS as muni,d.Telefono, d.NombreContacto, d.Observacion, d.Correo, d.Departamento, d.Municipio  from directorio d left join departamentos dp on d.Departamento = dp.id_deptoS left join municipios m on d.Municipio= m.id_mpioS where  (dp.nemonico_deptoS='" & nemonico & "' or 0='" & nemonico & "');"
                 Dim cmd As New MySqlCommand(consulta, conexion)
                 Dim reader As MySqlDataReader = cmd.ExecuteReader
                 While reader.Read

@@ -28,62 +28,7 @@
             var dataProvider = {
                 mapVar: AmCharts.maps.guatemalaLow,
                 areas: msg.d
-                //areas: [{ id: "GT-QC" },
-                //    {
-                //        id: "GT-ZA",
-                //        value: 1
-                //    },
-                //        {
-                //            id: "GT-JU",
-                //            value: 2
-                //        },
-                //        {
-                //            id: "GT-JA",
-                //            value: 3
-                //        },
-                //        {
-                //            id: "GT-CQ",
-                //            value: 4
-                //        },
-                //        {
-                //            id: "GT-IZ",
-                //            value: 5
-                //        },
-                //        {
-                //            id: "GT-SR",
-                //            value: 6
-                //        },
-                //        {
-                //            id: "GT-PR",
-                //            value: 7
-                //        },
-                //        {
-                //            id: "GT-TO",
-                //            value: 8
-                //        },
-                //        {
-                //            id: "GT-SO",
-                //            value: 9
-                //        },
-                //        {
-                //            id: "GT-SA",
-                //            value: 10
-                //        },
-                //        { id: "GT-SU" },
-                //        {
-                //            id: "GT-GU",
-                //            value: 10,
-                //            customData: "1973",
-                //        },
-                //        { id: "GT-ES" },
-                //        { id: "GT-CM" },
-                //        { id: "GT-AV" },
-                //        { id: "GT-SM" },
-                //        { id: "GT-RE" },
-                //        { id: "GT-QZ" },
-                //        { id: "GT-PE" },
-                //        { id: "GT-HU" },
-                //        { id: "GT-BV" }]
+                
             };
 
             map.areasSettings = {
@@ -129,6 +74,7 @@ function Prueba(event) {
 }
 
 function MostrarDetalleDirecorio(nemonico) {
+    $("#btnRegresar").show('linear');
     $("#tableDetalle").dataTable().fnClearTable();
     $.ajax({
         type: "POST",
@@ -143,7 +89,7 @@ function MostrarDetalleDirecorio(nemonico) {
                     item.NombreCompania,
                     item.NombreDepartamento,
                     item.NombreMunicipio,
-                    "<button type='button' id='" + item.IdDirectorio + "' class='btn btn-default btn-xs BtnEditarCliente'  aria-label='Left Align'><i class='glyphicon glyphicon-edit EditarCliente'></i> Editar</button>"
+                    "<button type='button' id='" + item.IdDirectorio + "' class='btn btn-default btn-xs BtnEditarDirectorio'  aria-label='Left Align'><i class='glyphicon glyphicon-edit EditarCliente'></i> Editar</button>"
                 ]);
             });
         },
@@ -152,3 +98,112 @@ function MostrarDetalleDirecorio(nemonico) {
         }
     });
 }
+
+
+$("#btnRegresar").click(function () {
+    $("#mapdiv").show('linear');
+    $("#tableDetalle").hide('linear');
+    $("#btnRegresar").hide('linear');
+    CargarMapa()
+});
+
+$("#BtnMostrarTodo").click(function () {
+    MostrarDetalleDirecorio(0)
+});
+
+
+$("#tableDetalle tbody").on("click", ".BtnEditarDirectorio", function () {
+    //            IndexTr = $(this).parent().parent().index();
+    //            $(".TableVehiculos").dataTable().fnDeleteRow(IndexTr);
+    $("#BtnEditarC").show();
+    $("#BtnGuardarC").hide();
+    $("#LblModificar").show();
+    $("#LblCrear").hide();
+    var id = this.id;
+
+    //$("#CheckPool div").removeClass("active");
+    $.ajax({
+        type: "POST",
+        url: "wsProductos.asmx/CatalogoClientes",
+        data: "{ 'IdCliente': " + id + " }",
+        dataType: 'json',
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            $.each(data.d, function (index, item) {
+                $("#textMDId").val(item.idProducto);
+                // $("#textMDPool").val(item.poolv);
+                $("#textMDCodigo").val(item.codigo);
+                $("#textMDNombre").val(item.Descripcion);
+                  
+                 
+                $("#txtMDCodigo").val(item.codigo);
+
+                $('#DropEstatus').val(item.IdEstado).trigger("chosen:updated");
+                $('#DropProveedor').val(item.idProveedor).trigger("chosen:updated");
+                $('#DropDUnidad').val(item.idUnidad).trigger("chosen:updated");
+                $('#DropCategoria').val(item.idCategoria).trigger("chosen:updated");
+                if (item.IdEstado) {
+                    $('#DropEstatus').val(1).trigger("chosen:updated");
+                } else {
+                    $('#DropEstatus').val(0).trigger("chosen:updated");
+                }
+
+            });
+            $('.ModalEditarVehiculo').modal('toggle');
+        },
+        error: function (data) {
+            console.log(data);
+        }
+    });
+});
+
+
+$(document).ready(function () {
+    LlenarDepartamentos();
+
+});
+
+function LlenarDepartamentos() {
+    $.ajax({
+        type: "POST",
+        url: "wsdepartamentomunicipio.asmx/Departamentos",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (msg) {
+            $.each(msg.d, function (index, item) {
+                $("#DropDepartamento").trigger('chosen:updated').append("<option value='" + item.IdDepartamento + "'>" + item.Nombre + "</option>");
+            });
+            //$("#DropDepartamento, #DropDepartamento3, #DropDepartamentoOrigen4, #DropDepartamentoDestino4").select2().select2("val");
+            LlenarMunicipio($("#DropDepartamento").val());
+        },
+        error: function (msg) {
+            Error(msg.responseText);
+        }
+    });
+    jQuery("select").chosen({ 'width': '100%', 'white-space': 'nowrap' });
+}
+
+function LlenarMunicipio(IdDepartamento) {
+    $.ajax({
+        type: "POST",
+        url: "wsdepartamentomunicipio.asmx/Municipios",
+        contentType: "application/json; charset=utf-8",
+        data: "{IdDepartamento:" + IdDepartamento + "}",
+        dataType: "json",
+        success: function (msg) {
+            $("#DropMunicipios").html("");
+            $.each(msg.d, function (index, item) {
+                $("#DropMunicipios").trigger('chosen:updated').append("<option value='" + item.IdMunicipio + "'>" + item.Nombre + "</option>");
+            });
+            //$("#DropMunicipios").select2().select2("val");
+        },
+        error: function (msg) {
+            msgerror(msg.responseText);
+        }
+    });
+}
+
+$("#DropDepartamento").bind("change blur", function () {
+    LlenarMunicipio($(this).val());
+});
+
